@@ -1,0 +1,647 @@
+/* Couleurs du projet */
+
+:root {
+    --fond: #fbf5ef;
+    --texte: #3c2628;
+    --rose: #a64f60;
+    --clair: #ead4ce;
+    --papier: #fffcf8;
+}
+
+/* Réglages généraux */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    background-color: var(--fond);
+    color: var(--texte);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+.signature {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+h1 {
+    margin-bottom: 28px;
+    font-size: clamp(42px, 5.7vw, 80px);
+    font-weight: normal;
+    line-height: 1.06;
+    letter-spacing: -3px;
+}
+
+h2 {
+    font-size: clamp(36px, 4.2vw, 58px);
+    font-weight: normal;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+em {
+    color: var(--rose);
+    font-weight: normal;
+}
+
+.petit-titre {
+    color: var(--rose);
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.8;
+    letter-spacing: 2.5px;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--texte);
+    outline-offset: 6px;
+}
+
+/* Navigation */
+
+.navigation {
+    max-width: 1240px;
+    margin: auto;
+    padding: 28px 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--clair);
+}
+
+.navigation a {
+    color: var(--rose);
+    font-family: Georgia, serif;
+    font-size: 26px;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.navigation > span {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* Accueil */
+
+.accueil {
+    position: relative;
+    max-width: 1240px;
+    margin: auto;
+    padding: 70px 65px 85px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.introduction .petit-titre {
+    margin-bottom: 25px;
+}
+
+.sous-titre {
+    color: #766165;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.bouton {
+    display: inline-block;
+    margin: 30px 0 25px;
+    padding: 19px 24px;
+
+    border-radius: 3px;
+    background-color: var(--rose);
+    color: white;
+
+    font-size: 12px;
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.bouton:hover {
+    background-color: #813b4a;
+    transform: translateY(-3px);
+}
+
+.signature-intro {
+    color: #866c6b;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Première photo */
+
+.portrait {
+    width: 100%;
+    max-width: 380px;
+    padding: 12px 12px 18px;
+
+    justify-self: end;
+
+    background-color: var(--papier);
+    box-shadow: 0 14px 40px #553a3420;
+
+    transform: rotate(3deg);
+}
+
+.portrait img {
+    aspect-ratio: 3 / 4;
+    object-position: center 32%;
+}
+
+.portrait figcaption {
+    padding-top: 18px;
+    color: var(--rose);
+
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.coeur-decoratif {
+    position: absolute;
+    bottom: 32px;
+    left: 47%;
+
+    color: #bd7c86;
+    font-size: 65px;
+
+    animation: battement 3s ease-in-out infinite;
+}
+
+/* Section musicale */
+
+.musique {
+    max-width: 1000px;
+    margin: 0 auto 65px;
+    padding: 30px 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    border: 1px solid #e4cbc5;
+    border-radius: 12px;
+    background-color: #f1e2dc;
+}
+
+/* Disque décoratif réalisé en CSS */
+
+.disque {
+    flex-shrink: 0;
+
+    width: 142px;
+    height: 142px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: repeating-radial-gradient(
+        circle,
+        #30282b 0,
+        #30282b 3px,
+        #44383c 4px,
+        #30282b 5px
+    );
+
+    box-shadow: 0 10px 22px #553a3425;
+}
+
+.disque span {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background-color: var(--rose);
+    color: #fff4ed;
+
+    font-size: 22px;
+}
+
+.musique-contenu {
+    flex: 1;
+    min-width: 0;
+}
+
+.musique h2 {
+    margin: 10px 0;
+    font-size: 34px;
+    letter-spacing: -1px;
+}
+
+.artiste {
+    margin-bottom: 10px;
+    color: var(--rose);
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.invitation-musique {
+    margin-bottom: 16px;
+    color: #766165;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Lecteur audio Audiomack */
+
+.lecteur-audio {
+    width: 100%;
+    overflow: hidden;
+
+    border-radius: 8px;
+    background-color: var(--papier);
+}
+
+.lecteur-audio iframe {
+    display: block;
+    width: 100%;
+    height: 252px;
+    border: none;
+}
+
+.lien-audio {
+    display: inline-block;
+    margin-top: 14px;
+
+    color: var(--rose);
+    font-size: 12px;
+    text-underline-offset: 4px;
+}
+
+/* Bande décorative */
+
+.interlude {
+    padding: 23px 15px;
+
+    border-top: 1px solid #e7d0c8;
+    border-bottom: 1px solid #e7d0c8;
+
+    background-color: #f1e2dc;
+    color: #8e5d64;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+    line-height: 2;
+    text-align: center;
+}
+
+.interlude span {
+    padding: 0 25px;
+    color: var(--rose);
+}
+
+/* Lettre */
+
+.lettre-section {
+    max-width: 1120px;
+    margin: auto;
+    padding: 95px 45px;
+
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    align-items: start;
+    gap: 65px;
+}
+
+.titre-lettre {
+    position: sticky;
+    top: 35px;
+}
+
+.titre-lettre h2 {
+    margin: 20px 0;
+}
+
+.titre-lettre > span {
+    display: block;
+    margin-top: 30px;
+    font-size: 45px;
+}
+
+.lettre {
+    padding: 48px 50px;
+
+    border: 1px solid #eaded3;
+    border-radius: 3px;
+
+    background-color: var(--papier);
+    box-shadow: 0 12px 45px #775b4710;
+}
+
+.lettre h3 {
+    margin-bottom: 30px;
+    color: var(--rose);
+
+    font-size: 29px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.lettre p {
+    margin-bottom: 24px;
+    color: #6b5657;
+
+    font-size: 14px;
+    line-height: 2;
+}
+
+.lettre .signature {
+    margin: 30px 0 0;
+    color: var(--rose);
+
+    font-size: 26px;
+    font-style: italic;
+}
+
+/* Deuxième photo */
+
+.souvenir {
+    max-width: 1040px;
+    margin: 0 auto 95px;
+    padding: 0 45px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    align-items: center;
+    gap: 90px;
+}
+
+.photo-souvenir {
+    padding: 12px 12px 22px;
+
+    background-color: var(--papier);
+    box-shadow: 0 10px 35px #553a3420;
+
+    transform: rotate(-4deg);
+}
+
+.photo-souvenir img {
+    aspect-ratio: 4 / 5;
+    object-position: center 32%;
+}
+
+.photo-souvenir figcaption {
+    padding-top: 20px;
+    color: var(--rose);
+
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    text-align: center;
+}
+
+.texte-souvenir h2 {
+    margin: 22px 0;
+}
+
+.texte-souvenir > p:not(.petit-titre) {
+    color: #766165;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.grand-coeur {
+    display: block;
+    margin-top: 25px;
+    color: var(--rose);
+
+    font-family: Georgia, serif;
+    font-size: 70px;
+}
+
+/* Message final */
+
+.final {
+    padding: 70px 25px;
+
+    border-top: 1px solid #e6cbc6;
+    border-bottom: 1px solid #e6cbc6;
+
+    background-color: #eedcd7;
+    text-align: center;
+}
+
+.final h2 {
+    margin: 20px 0;
+}
+
+.final > p:not(.petit-titre) {
+    color: #76575c;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.final a {
+    display: inline-block;
+    margin-top: 25px;
+
+    font-size: 11px;
+    text-underline-offset: 6px;
+}
+
+/* Pied de page */
+
+footer {
+    padding: 28px;
+    color: #94747a;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+footer span {
+    margin-left: 8px;
+    color: var(--rose);
+}
+
+/* Animation du cœur */
+
+@keyframes battement {
+    50% {
+        transform: scale(1.1) rotate(8deg);
+    }
+}
+
+/* Adaptation aux téléphones */
+
+@media (max-width: 760px) {
+    .navigation {
+        padding: 23px;
+    }
+
+    .navigation > span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .accueil {
+        padding: 48px 26px 70px;
+
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .introduction {
+        text-align: center;
+    }
+
+    h1 {
+        letter-spacing: -1.8px;
+    }
+
+    .portrait {
+        max-width: 285px;
+        justify-self: center;
+    }
+
+    .coeur-decoratif {
+        right: 25px;
+        bottom: 16px;
+        left: auto;
+
+        font-size: 45px;
+    }
+
+    .musique {
+        margin: 0 20px 45px;
+        padding: 28px 22px;
+
+        flex-direction: column;
+        gap: 22px;
+
+        text-align: center;
+    }
+
+    .disque {
+        width: 105px;
+        height: 105px;
+    }
+
+    .musique-contenu {
+        width: 100%;
+    }
+
+    .musique h2 {
+        font-size: 30px;
+    }
+
+    .interlude {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .interlude span {
+        padding: 0 8px;
+    }
+
+    .lettre-section {
+        padding: 55px 20px;
+
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .titre-lettre {
+        position: static;
+        text-align: center;
+    }
+
+    .titre-lettre h2 br {
+        display: none;
+    }
+
+    .titre-lettre > span {
+        display: none;
+    }
+
+    .lettre {
+        padding: 28px 24px;
+    }
+
+    .lettre p {
+        line-height: 1.9;
+    }
+
+    .souvenir {
+        margin-bottom: 55px;
+        padding: 0 30px;
+
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .photo-souvenir {
+        width: 100%;
+        max-width: 290px;
+        justify-self: center;
+    }
+
+    .texte-souvenir {
+        text-align: center;
+    }
+
+    .grand-coeur {
+        margin-top: 10px;
+    }
+
+    .final {
+        padding: 50px 22px;
+    }
+
+    .final h2 {
+        font-size: 37px;
+    }
+}
+
+/* Réduction des animations selon les préférences de l’utilisateur */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
